@@ -1,0 +1,95 @@
+query productDetail($urlKey: String, $onServer: Boolean!) {
+    productDetail: products(filter: { url_key: { eq: $urlKey } }) {
+        items {
+            __typename
+            categories {
+                id
+                breadcrumbs {
+                    category_id
+                }
+            }
+            crosssell_products {
+                url_key
+                sku
+                name
+                price_range {
+                    maximum_price {
+                        final_price {
+                            currency
+                            value
+                        }
+                    }
+                    minimum_price {
+                        final_price {
+                            currency
+                            value
+                        }
+                    }
+                }
+            }
+            description {
+                html
+            }
+            id
+            media_gallery {
+                label
+                url
+            }
+
+            meta_title @include(if: $onServer)
+            meta_keyword @include(if: $onServer)
+            meta_description
+            name
+            sku
+            small_image {
+                url
+            }
+            url_key
+            ... on ConfigurableProduct {
+                configurable_options {
+                    attribute_code
+                    attribute_id
+                    id
+                    label
+                    values {
+                        default_label
+                        label
+                        store_label
+                        use_default_value
+                        value_index
+                    }
+                }
+                variants {
+                    attributes {
+                        code
+                        value_index
+                    }
+                    product {
+                        id
+                        media_gallery {
+                            label
+                            url
+                        }
+                        sku
+                        stock_status
+                        price_range {
+                            maximum_price {
+                                final_price {
+                                    currency
+                                    value
+                                }
+                            }
+                            minimum_price {
+                                final_price {
+                                    currency
+                                    value
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

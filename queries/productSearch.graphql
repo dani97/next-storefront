@@ -1,0 +1,34 @@
+query productSearch(
+    $currentPage: Int = 1
+    $inputText: String!
+    $pageSize: Int = 6
+    $filters: ProductAttributeFilterInput!
+) {
+    products(
+        currentPage: $currentPage
+        pageSize: $pageSize
+        search: $inputText
+        filter: $filters
+    ) {
+        items {
+            id
+            name
+            small_image {
+                url
+            }
+            url_key
+            price {
+                regularPrice {
+                    amount {
+                        value
+                        currency
+                    }
+                }
+            }
+        }
+        page_info {
+            total_pages
+        }
+        total_count
+    }
+}

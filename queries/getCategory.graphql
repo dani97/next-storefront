@@ -1,0 +1,23 @@
+query category(
+    $urlKey: String!
+    $currentPage: Int!
+    $onServer: Boolean!
+) {
+    categoryList(filters: {url_key: {eq: $urlKey}}) {
+        id
+        description
+        name
+        product_count
+        meta_title @include(if: $onServer)
+        meta_keywords @include(if: $onServer)
+        meta_description
+        products(currentPage: $currentPage) {
+            items {
+                name
+                sku
+                url_key
+            }
+        }
+        product_count
+    }
+}

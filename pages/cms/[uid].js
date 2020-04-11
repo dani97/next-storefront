@@ -1,6 +1,5 @@
 import React,{Fragment} from 'react';
 import Head from "next/head";
-import { useRouter } from "next/router";
 import GET_CMS from '../../queries/getCmsPage.graphql';
 import getUrlKey from "../../util/makeUrlKey";
 import createApolloClient from "../../apollo/apolloClient";
@@ -46,7 +45,7 @@ export async function getStaticPaths() {
     ];
     const paths = pages.map( page => ({
         params: {
-            uid: page + '.html'
+            uid: page
         }
     }))
     return {

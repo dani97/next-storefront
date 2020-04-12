@@ -5,13 +5,12 @@ import { useQuery } from "@apollo/react-hooks";
 import { useRouter } from "next/router";
 import GET_PRODUCT_DETAIL from '../../queries/getProductDetail.graphql';
 import LoadingIndicator from "../../components/LoadingIndicator";
-import getUrlKey from "../../util/makeUrlKey";
 import ErrorPage from "next/error";
 
 const Product = ()=> {
     const router = useRouter();
     const {error, loading, data } = useQuery(GET_PRODUCT_DETAIL, {
-        variables: { urlKey: getUrlKey(router.query.uid) , onServer: true}
+        variables: { urlKey: router.query.uid , onServer: true}
     });
     if (loading) return <LoadingIndicator/>;
     if (error) return <div> Error Fetching Product</div>;

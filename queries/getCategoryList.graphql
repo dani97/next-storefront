@@ -1,0 +1,20 @@
+query  {
+    categoryList {
+        include_in_menu
+        meta_title
+        meta_keywords
+        meta_description
+        product_count
+        url_key
+        image
+        children {
+            name
+            include_in_menu
+            meta_title
+            meta_keywords
+            meta_description
+            product_count
+            url_key
+        }
+    }
+}

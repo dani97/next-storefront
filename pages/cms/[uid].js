@@ -1,7 +1,6 @@
 import React,{Fragment} from 'react';
 import Head from "next/head";
 import GET_CMS from '../../queries/getCmsPage.graphql';
-import getUrlKey from "../../util/makeUrlKey";
 import createApolloClient from "../../apollo/apolloClient";
 
 const cms = ({page})=> {
@@ -24,7 +23,7 @@ export async function getStaticProps({ params: {uid}}) {
      const { data } = await client.query({
         query: GET_CMS,
         variables: {
-            uid: getUrlKey(uid),
+            uid: uid,
             onServer: true
         }
     });

@@ -7,6 +7,7 @@ import GET_CATEGORY from '../../queries/getCategory.graphql';
 import LoadingIndicator from "../../components/LoadingIndicator";
 import ErrorPage from "next/error";
 import ProductGrid from "../../components/ProductGrid";
+import Pagination from "../../components/ProductGrid/Pagination";
 
 const Category = ()=> {
     const router = useRouter();
@@ -28,6 +29,7 @@ const Category = ()=> {
                 <meta name="description" content={category.meta_description}/>
             </Head>
             <ProductGrid products={category.products.items}/>
+            <Pagination pageInfo={category.products.page_info}/>
         </Fragment>
     );
 };

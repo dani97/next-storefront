@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from "next/link";
+import style from './Footer.module.css';
 
 const Footer = () => (
-    <footer>
+    <footer className={style.footer}>
         <div>
             <Link href="/cms/[uid]" as={"/cms/private-sales"}>
                 <a>Private Sales</a>

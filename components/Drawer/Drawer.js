@@ -1,16 +1,17 @@
 import React from 'react';
-import createApolloClient from "../../apollo/apolloClient";
 import Link from "next/link";
 import { withApollo } from '../../apollo/apollo';
 import { useQuery } from "@apollo/react-hooks";
 import GET_CATEGORY_LIST from '../../queries/getCategoryList.graphql';
 import LoadingIndicator from "../LoadingIndicator";
+import style from './drawer.module.css';
+import cls from 'classnames';
 
-const Navigation = () => {
+const Drawer = ({open}) => {
     const {error, loading, data } = useQuery(GET_CATEGORY_LIST);
     if (loading) return <LoadingIndicator/>
     const categories =data.categoryList[0].children;
-    return <nav>
+    return <nav className={cls(style.drawer, {[style.open]: open})}>
         {
             categories.map((category, index) => {
                 return (<div key={index}>
@@ -23,4 +24,4 @@ const Navigation = () => {
     </nav>
 }
 
-export default withApollo({ssr: true})(Navigation);
+export default withApollo({ssr: true})(Drawer);

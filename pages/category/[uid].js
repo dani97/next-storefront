@@ -21,7 +21,6 @@ const Category = ()=> {
     if (error) { console.log(error); return <ErrorPage statusCode={404}/>}
     if (loading) return <LoadingIndicator/>;
     const category = data.categoryList[0];
-    console.log(category);
     return (
         <Fragment>
             <Head>

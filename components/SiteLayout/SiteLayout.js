@@ -1,18 +1,46 @@
-import React from 'react';
+import React, {useState} from 'react';
 import dynamic from "next/dynamic";
+import Header from "../Header";
 import Footer from '../Footer';
-import styles from './SiteLayout.module.css';
+import style from './SiteLayout.module.css';
+import BackDrop from "../Backdrop";
 
-const NavBar = dynamic(() => import('../NavBar'));
+const Drawer = dynamic(() => import('../Drawer'), { ssr: false });
 
-const SiteLayout = ({ children }) => (
-    <div>
-        <NavBar/>
-        {children}
+const SiteLayout = ({ children }) => {
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    let backDrop;
+    const toggleDrawerOpen = () => {
+        setDrawerOpen(!drawerOpen);
+    }
+
+    const closeOnBackdrop = () => {
+        setDrawerOpen(false);
+    }
+
+    if (drawerOpen) {
+        backDrop = <BackDrop click={closeOnBackdrop}/>;
+    }
+
+    return (
         <div>
-            <Footer/>
+            <Header drawerOpenHandler={toggleDrawerOpen}/>
+            <div className={style.content}>
+                <Drawer open={drawerOpen}/>
+                {
+                    backDrop
+                }
+                <section>
+                    {
+                        children
+                    }
+                </section>
+            </div>
+            <div>
+                <Footer/>
+            </div>
         </div>
-    </div>
-);
+    )
+};
 
 export default SiteLayout;

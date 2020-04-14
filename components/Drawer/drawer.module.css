@@ -1,0 +1,24 @@
+.drawer {
+    height: 100vh;
+    background: var(--secondary-background);
+    box-shadow: 2px 0px 5px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.drawer a {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.drawer.open {
+    transform: translateX(0);
+}

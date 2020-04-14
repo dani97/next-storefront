@@ -1,7 +1,8 @@
 query category(
     $urlKey: String!
     $currentPage: Int!
-    $onServer: Boolean!
+    $onServer: Boolean!,
+    $pageSize: Int
 ) {
     categoryList(filters: {url_key: {eq: $urlKey}}) {
         id
@@ -11,11 +12,16 @@ query category(
         meta_title @include(if: $onServer)
         meta_keywords @include(if: $onServer)
         meta_description
-        products(currentPage: $currentPage) {
+        image
+        products(currentPage: $currentPage, pageSize: $pageSize) {
             items {
                 name
                 sku
                 url_key
+                thumbnail {
+                    url
+                    label
+                }
             }
         }
         product_count

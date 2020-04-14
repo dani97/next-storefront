@@ -1,0 +1,11 @@
+.productCard {
+    height: auto;
+    background: var(--secondary-background);
+    padding: 1rem;
+    text-align: center;
+}
+
+.productCard img {
+    width: 100%;
+    height: auto;
+}

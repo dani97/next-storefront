@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import GET_CATEGORY from '../../queries/getCategory.graphql';
 import LoadingIndicator from "../../components/LoadingIndicator";
 import ErrorPage from "next/error";
-import Link from "next/link";
+import ProductGrid from "../../components/ProductGrid";
 
 const Category = ()=> {
     const router = useRouter();
@@ -14,31 +14,21 @@ const Category = ()=> {
         variables: {
             urlKey: router.query.uid,
             onServer: true,
-            currentPage: router.query.page ?? 1
+            currentPage: router.query.page ?? 1,
+            pageSize: 6
         }
     });
-    if (error) { console.log(error); return <ErrorPage statusCode={404}/>};
+    if (error) { console.log(error); return <ErrorPage statusCode={404}/>}
     if (loading) return <LoadingIndicator/>;
     const category = data.categoryList[0];
+    console.log(category);
     return (
         <Fragment>
             <Head>
                 <title>{category.name}</title>
                 <meta name="description" content={category.meta_description}/>
             </Head>
-            <div>
-                {
-                    category.products.items.map((product, index) => {
-                        return(
-                            <div key={index}>
-                                <Link href="/product/[uid]" as={"/product/" + product.url_key}>
-                                    <a>{product.name}</a>
-                                </Link>
-                            </div>
-                        )
-                    })
-                }
-            </div>
+            <ProductGrid products={category.products.items}/>
         </Fragment>
     );
 };

@@ -6,15 +6,19 @@
     padding: 1rem;
     justify-items: center;
 }
+
 @media (min-width: 768px) {
     .productGrid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .productDetail {
+        width: 70%;
     }
 }
 
 .productDetail {
     padding: 1rem;
-    width: 70%;
     background: var(--secondary-background);
     color: var(--secondary-color);
     border-radius: 1rem;

@@ -1,0 +1,23 @@
+.qtyButtons {
+    border: none;
+    border-radius: 0.2rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--button-color);
+    cursor: pointer;
+}
+
+.qtyBox {
+    width: 2.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    height: 2rem;
+    box-sizing: border-box;
+    margin: 0 0.3rem;
+    text-align: center;
+}
+
+.qtyButtons:hover {
+    background: var(--button-color);
+}
+

@@ -26,7 +26,8 @@
     "node-fetch": "^2.6.0",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-responsive-carousel": "^3.2.4"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.13.2",

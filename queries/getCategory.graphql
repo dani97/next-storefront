@@ -16,14 +16,24 @@ query category(
         products(currentPage: $currentPage, pageSize: $pageSize) {
             items {
                 name
-                sku
+                price_range {
+                    minimum_price {
+                        regular_price {
+                            currency
+                            value
+                        }
+                    }
+                }
                 url_key
                 thumbnail {
                     url
                     label
                 }
             }
+            page_info {
+                current_page
+                total_pages
+            }
         }
-        product_count
     }
 }

@@ -3,9 +3,18 @@
     background: var(--secondary-background);
     padding: 1rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .productCard img {
     width: 100%;
     height: auto;
+}
+
+.cardTextArea {
+    font-size: .8rem;
 }

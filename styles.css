@@ -79,3 +79,7 @@ table {
     border-spacing: 0;
 }
 /* reset css end */
+
+* {
+    font-family:  'Roboto', sans-serif;;
+}

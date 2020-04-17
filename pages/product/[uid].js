@@ -1,10 +1,11 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { withApollo } from '../../apollo/apollo';
 import Head from "next/head";
 import { useQuery } from "@apollo/react-hooks";
 import { useRouter } from "next/router";
 import GET_PRODUCT_DETAIL from '../../queries/getProductDetail.graphql';
 import LoadingIndicator from "../../components/LoadingIndicator";
+import ProductDetail from "../../components/ProductDetail";
 import ErrorPage from "next/error";
 
 const Product = ()=> {
@@ -22,13 +23,13 @@ const Product = ()=> {
         return <ErrorPage statusCode={404}/>
     }
     return (
-        <Fragment>
+        <>
             <Head>
                 <title>{title}</title>
                 <meta name="description" content={product.meta_description}/>
             </Head>
-            <p>{JSON.stringify(data)}</p>
-        </Fragment>
+            <ProductDetail product={ product }/>
+        </>
     );
 };
 

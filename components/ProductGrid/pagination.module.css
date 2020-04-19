@@ -8,6 +8,19 @@
 .pagination button {
     border: none;
     cursor: pointer;
-    background: transparent;
+    background: var(--primary-component-color);
     color: var(--primary-color);
+    padding: 0;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.1rem;
+}
+.pagination button:disabled {
+    background: var(--disabled-component-color);
+    color: var(--disabled-component-font-color);
+    cursor: unset;
+}
+
+.pagination * + * {
+    margin-left: 0.3rem;
 }

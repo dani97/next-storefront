@@ -1,11 +1,13 @@
 :root {
     --primary-background: #121212;
     --primary-color: #e1e1e1;
+    --disabled-component-font-color: #545151;
     --secondary-background: #3a3a3a;
     --secondary-color: #dfdfdf;
     --text-alt: #cfcfcf;
     --primary-component-color: #654a85;
     --secondary-component-color: #b780fc;
+    --disabled-component-color: #28183a;
     --button-color: #43d9c4;
     --primary-color-active: #00e8d2;
     height: 100%;

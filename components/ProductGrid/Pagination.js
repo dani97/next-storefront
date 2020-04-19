@@ -1,7 +1,9 @@
 import React from 'react';
-import Link from "next/link";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import style from './pagination.module.css';
+import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "react-feather";
+import queryString from 'querystring';
+import url from 'url';
 
 const Pagination = ({ pageInfo }) => {
     const router = useRouter();
@@ -9,41 +11,56 @@ const Pagination = ({ pageInfo }) => {
     if (pageInfo.total_pages === 1) {
         return '';
     }
-    const {current_page, total_pages } = pageInfo
+    const {current_page, total_pages } = pageInfo;
 
-    const prevButton = () => {
-        if (current_page !== 1) {
-            const query = {...router.query, page : current_page -1 }
-            return (
-                <Link href={{pathname: router.pathname, query: query}} as={router.asPath}>
-                    <button> {'<'} </button>
-                </Link>
-            );
-        }
-        return <button disabled>{'<'}</button>;
+    const generateQueryParams = (query, page) => {
+        const queryCopy = {...query};
+        delete queryCopy.uid;
+        return queryString.stringify({...queryCopy, page})
     }
 
-    const nextButton = () => {
-        if (current_page !== total_pages) {
-            const query = {...router.query, page : current_page +1 }
-            return (
-                <Link href={{pathname: router.pathname, query: query}} as={router.asPath}>
-                    <button> {'>'} </button>
-                </Link>
-            );
-        }
-        return <button disabled>{'>'}</button>;
+    const stripQueryParams = (asPath) => {
+        return url.parse(asPath).pathname;
+    }
+
+    const navigate = async (page) => {
+        console.log("as pathname",router)
+        console.log("as path",router.asPath)
+        const queryString = '?' + generateQueryParams(router.query, page);
+        await router.push(router.pathname + queryString, stripQueryParams(router.asPath) + queryString);
     }
 
     return (
         <div className={style.pagination}>
-            {
-                prevButton()
-            }
-            <div>{current_page}</div>
-            {
-                nextButton()
-            }
+            <button
+                disabled={current_page === 1}
+                onClick={() => navigate(1)}
+            >
+                <ChevronsLeft/>
+            </button>
+
+            <button
+                disabled={current_page === 1}
+                onClick={() => navigate(current_page - 1)}
+            >
+                <ChevronLeft/>
+            </button>
+
+            <div>{current_page} of { total_pages }</div>
+
+            <button
+                disabled={current_page === total_pages}
+                onClick={() => navigate(current_page + 1)}
+            >
+                <ChevronRight/>
+            </button>
+
+            <button
+                disabled={current_page === total_pages}
+                onClick={() => navigate(total_pages)}
+            >
+                <ChevronsRight />
+            </button>
         </div>
     );
 }

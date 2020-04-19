@@ -4,7 +4,6 @@ import Header from "../Header";
 import Footer from '../Footer';
 import style from './SiteLayout.module.css';
 import BackDrop from "../Backdrop";
-
 const Drawer = dynamic(() => import('../Drawer'), { ssr: false });
 
 const SiteLayout = ({ children }) => {

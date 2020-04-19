@@ -1,12 +1,11 @@
 import React from "react";
+import { Menu} from "react-feather";
 import style from './hamburger.module.css';
 
 const Hamburger = props => (
-    <button className={style.hamburger} onClick={props.click}>
-        <div className={style.hamburgerLine}/>
-        <div className={style.hamburgerLine}/>
-        <div className={style.hamburgerLine}/>
-    </button>
+    <div className={style.hamburger} onClick={props.click}>
+        <Menu />
+    </div>
 );
 
 export default Hamburger;

@@ -11,10 +11,10 @@ const QtyBox = ({defaultValue, stepper}) => {
 
     const decreaseQty = () =>  {
         const value = parseInt(qtyBoxRef.current.value)
-        if (value - stepper > 0) {
+        if (value - stepper > 1) {
             qtyBoxRef.current.value = value - stepper;
         } else {
-            qtyBoxRef.current.value = 0;
+            qtyBoxRef.current.value = 1;
         }
     }
 

@@ -18,6 +18,6 @@
 }
 
 .qtyButtons:hover {
-    background: var(--button-color);
+    opacity: 75%;
 }
 

@@ -9,7 +9,7 @@ import cls from 'classnames';
 
 const Drawer = ({open}) => {
     const {error, loading, data } = useQuery(GET_CATEGORY_LIST);
-    if (loading) return <LoadingIndicator/>
+    if (loading) return <LoadingIndicator/>;
     const categories =data.categoryList[0].children;
     return <nav className={cls(style.drawer, {[style.open]: open})}>
         {

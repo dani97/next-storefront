@@ -7,6 +7,14 @@
     justify-items: center;
 }
 
+.priceBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
 @media (min-width: 768px) {
     .productGrid {
         grid-template-columns: 1fr 1fr;

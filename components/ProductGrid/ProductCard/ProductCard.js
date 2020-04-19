@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './ProductCard.module.css';
 import Link from "next/link";
+import PriceBox from "../../PriceBox";
 
 const ProductCard = ({product}) => {
     return (
@@ -9,10 +10,7 @@ const ProductCard = ({product}) => {
                 <img src={product.thumbnail.url}  alt={product.thumbnail.label} loading="lazy"/>
                 <div className={style.cardTextArea}>
                     <div><span>{ product.name } </span></div>
-                    <div>
-                        <span> {product.price_range.minimum_price.regular_price.value}
-                        {product.price_range.minimum_price.regular_price.currency}</span>
-                    </div>
+                    <PriceBox product={product}/>
                 </div>
             </div>
         </Link>

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import dynamic from "next/dynamic";
 import Header from "../Header";
 import Footer from '../Footer';
 import style from './SiteLayout.module.css';
 import BackDrop from "../Backdrop";
-const Drawer = dynamic(() => import('../Drawer'), { ssr: false });
+import dynamic from "next/dynamic";
 
+const Drawer = dynamic(() => import('../Drawer'), {ssr: false});
 const SiteLayout = ({ children }) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     let backDrop;

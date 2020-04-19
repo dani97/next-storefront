@@ -7,7 +7,7 @@ import GET_CATEGORY from '../../queries/getCategory.graphql';
 import LoadingIndicator from "../../components/LoadingIndicator";
 import ErrorPage from "next/error";
 import ProductGrid from "../../components/ProductGrid";
-import Pagination from "../../components/ProductGrid/Pagination";
+import Pagination from "../../components/Pagination";
 
 const Category = ()=> {
     const router = useRouter();

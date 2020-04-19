@@ -18,7 +18,13 @@ query category(
                 name
                 price_range {
                     minimum_price {
-                        regular_price {
+                        final_price {
+                            currency
+                            value
+                        }
+                    }
+                    maximum_price {
+                        final_price {
                             currency
                             value
                         }

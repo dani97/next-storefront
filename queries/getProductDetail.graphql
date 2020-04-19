@@ -8,6 +8,20 @@ query productDetail($urlKey: String, $onServer: Boolean!) {
                     category_id
                 }
             }
+            price_range {
+                maximum_price {
+                    final_price {
+                        value
+                        currency
+                    }
+                }
+                minimum_price {
+                    final_price {
+                        value
+                        currency
+                    }
+                }
+            }
             crosssell_products {
                 url_key
                 sku

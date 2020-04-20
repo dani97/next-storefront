@@ -24,8 +24,6 @@ const Pagination = ({ pageInfo }) => {
     }
 
     const navigate = async (page) => {
-        console.log("as pathname",router)
-        console.log("as path",router.asPath)
         const queryString = '?' + generateQueryParams(router.query, page);
         await router.push(router.pathname + queryString, stripQueryParams(router.asPath) + queryString);
     }

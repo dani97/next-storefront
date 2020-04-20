@@ -14,6 +14,7 @@
     height: 2rem;
     width: 2rem;
     border-radius: 0.1rem;
+    line-height: 1rem;
 }
 .pagination button:disabled {
     background: var(--disabled-component-color);

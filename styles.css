@@ -16,6 +16,7 @@
     --header-height: 4rem;
     --footer-height: 5rem;
     --dark-text: #4c4c4c;
+    font-size: 16px;
 }
 
 a {
@@ -84,5 +85,5 @@ table {
 /* reset css end */
 
 * {
-    font-family:  'Roboto', sans-serif;;
+    font-family: 'Baloo Paaji 2', cursive;
 }

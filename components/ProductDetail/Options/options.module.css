@@ -27,9 +27,9 @@
 }
 
 .optionList label:hover {
-    opacity: 75%;
+    opacity: 0.75;
 }
 
 .optionList input[type="radio"]:checked + label{
-    opacity: 50%;
+    opacity: 0.5;
 }

@@ -3,10 +3,17 @@
     grid-template-columns: auto auto;
     column-gap: 1rem;
     row-gap: 1rem;
+    min-height: 100vh;
+    height: auto;
 }
 
 @media (min-width: 768px) {
     .productGrid {
         grid-template-columns: auto auto auto;
     }
+}
+
+.skeleton {
+    width: 33vw;
+    height: 80vh;
 }

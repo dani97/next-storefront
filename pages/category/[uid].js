@@ -8,6 +8,7 @@ import LoadingIndicator from "../../components/LoadingIndicator";
 import ErrorPage from "next/error";
 import ProductGrid from "../../components/ProductGrid";
 import Pagination from "../../components/Pagination";
+import GridSkeleton from "../../components/ProductGrid/GridSkeleton";
 
 const Category = ()=> {
     const router = useRouter();
@@ -20,7 +21,7 @@ const Category = ()=> {
         }
     });
     if (error) { console.log(error); return <ErrorPage statusCode={404}/>}
-    if (loading) return <LoadingIndicator/>;
+    if (loading) return <GridSkeleton/>;
     const category = data.categoryList[0];
     return (
         <Fragment>

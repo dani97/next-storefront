@@ -10,15 +10,21 @@ import TreeSkeleton from "./TreeSkeleton";
 
 const Tree = ({rootId}) => {
     const [category, setCategory] = useState(rootId);
-    const [prevCategory, setPrevCategory] = useState(rootId);
     const {error, loading, data } = useQuery(GET_CATEGORY_LIST, {
         variables: {
             "ids": [category]
         }
     });
 
+    const getParentCategory = (category) => {
+        if (category.id === rootId) {
+            return rootId;
+        }
+        const categories = category.path.split("/");
+        return categories[categories.length -2] || rootId;
+    }
+
     const handleCategoryChange = (categoryId) => {
-        setPrevCategory(category);
         setCategory(categoryId);
     }
 
@@ -26,7 +32,8 @@ const Tree = ({rootId}) => {
     if (loading) return <TreeSkeleton/>;
 
     const categories =data.categoryList[0].children;
-    const getChildren = (category) => {
+
+    const getSubCategory = (category) => {
         if (category.children_count > 0) {
             return <Branch
                 key={category.id}
@@ -41,14 +48,14 @@ const Tree = ({rootId}) => {
     return <section className={styles.categoryTree}>
         <div role="button-group" className={styles.controls}>
             <Home onClick={() => handleCategoryChange(rootId)}/>
-            <ChevronLeft onClick={() => handleCategoryChange(prevCategory)}/>
+            <ChevronLeft onClick={() => handleCategoryChange(getParentCategory(data.categoryList[0]))}/>
         </div>
         {
             categories.map((category) => {
                 return (
                     <Fragment key={category.id}>
                         {
-                            getChildren(category)
+                            (category.include_in_menu) && getSubCategory(category)
                         }
                     </Fragment>
                 )

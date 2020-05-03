@@ -10,15 +10,14 @@ query($ids: [String]) {
         children_count
         id
         name
+        path
         children {
             id
             include_in_menu
             url_key
             children_count
             name
-            children {
-                id
-            }
+            path
         }
     }
 }

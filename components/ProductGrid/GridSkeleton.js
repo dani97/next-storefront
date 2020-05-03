@@ -3,14 +3,25 @@ import styles from'./ProductGrid.module.css';
 import ContentLoader from "react-content-loader";
 
 const GridCard = (props) => {
+    function getCardSkeletonStyle() {
+        const innerWidth  = typeof window !== "undefined" ? window.innerWidth : 600;
+        let height = "60vh";
+        if (innerWidth > 768) {
+            height = "80vh";
+        }
+        return {
+            width : "100%",
+            height
+        };
+    }
+
     return (
         <ContentLoader
             {...props}
-            style={{height: "80vh"}}
+            style={getCardSkeletonStyle()}
             backgroundColor="#3a3a3a"
-            foregroundColor="#121212"
+            foregroundColor="#a3a3a3"
             speed={2}
-            gradientRatio={0.5}
             uniqueKey="clp-skeleton"
         >
             <rect x="0" y="0" rx="0" ry="0" width="100%" height="100%" />

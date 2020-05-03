@@ -23,6 +23,9 @@ const Category = ()=> {
     if (error) { console.log(error); return <ErrorPage statusCode={404}/>}
     if (loading) return <GridSkeleton/>;
     const category = data.categoryList[0];
+    if (!category) {
+        return <ErrorPage statusCode={404}/>
+    }
     return (
         <Fragment>
             <Head>

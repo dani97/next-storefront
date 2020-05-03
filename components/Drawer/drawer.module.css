@@ -1,14 +1,11 @@
 .drawer {
     height: 100vh;
     background: var(--secondary-background);
-    box-shadow: 2px 0px 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
     position: fixed;
     top: 0;
     left: 0;
     width: 10rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     z-index: 200;
     transform: translateX(-100%);
     transition: transform 0.3s ease-out;
@@ -21,4 +18,19 @@
 
 .drawer.open {
     transform: translateX(0);
+}
+
+.title {
+    height: 10vh;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.drawer a:hover,
+.drawer a:active,
+.drawer svg:hover {
+    color: aqua;
 }

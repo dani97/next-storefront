@@ -3,9 +3,8 @@ import Header from "../Header";
 import Footer from '../Footer';
 import style from './SiteLayout.module.css';
 import BackDrop from "../Backdrop";
-import dynamic from "next/dynamic";
+import Drawer from "../Drawer";
 
-const Drawer = dynamic(() => import('../Drawer'), {ssr: false});
 const SiteLayout = ({ children }) => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     let backDrop;
@@ -25,7 +24,7 @@ const SiteLayout = ({ children }) => {
         <div>
             <Header drawerOpenHandler={toggleDrawerOpen}/>
             <div className={style.content}>
-                <Drawer open={drawerOpen}/>
+                <Drawer open={drawerOpen} title="Menu"/>
                 {
                     backDrop
                 }

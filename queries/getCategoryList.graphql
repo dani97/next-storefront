@@ -1,20 +1,24 @@
-query  {
-    categoryList {
+query($ids: [String]) {
+    categoryList(filters: {
+        ids: {
+            in: $ids
+        }
+    }
+    ) {
         include_in_menu
-        meta_title
-        meta_keywords
-        meta_description
-        product_count
         url_key
-        image
+        children_count
+        id
+        name
         children {
-            name
+            id
             include_in_menu
-            meta_title
-            meta_keywords
-            meta_description
-            product_count
             url_key
+            children_count
+            name
+            children {
+                id
+            }
         }
     }
 }

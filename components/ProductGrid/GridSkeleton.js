@@ -22,7 +22,7 @@ const GridCard = (props) => {
             backgroundColor="#3a3a3a"
             foregroundColor="#a3a3a3"
             speed={2}
-            uniqueKey="clp-skeleton"
+            uniqueKey={"clp-skeleton-"+props.uniqueKey}
         >
             <rect x="0" y="0" rx="0" ry="0" width="100%" height="100%" />
         </ContentLoader>)
@@ -30,12 +30,12 @@ const GridCard = (props) => {
 const GridSkeleton = () => {
     return (
         <div className={styles.productGrid}>
-            <GridCard/>
-            <GridCard/>
-            <GridCard/>
-            <GridCard/>
-            <GridCard/>
-            <GridCard/>
+            <GridCard uniqueKey={1}/>
+            <GridCard uniqueKey={2}/>
+            <GridCard uniqueKey={3}/>
+            <GridCard uniqueKey={4}/>
+            <GridCard uniqueKey={5}/>
+            <GridCard uniqueKey={6}/>
         </div>
     )
 }

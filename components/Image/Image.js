@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
+import styles from './Image.module.css';
 
 const Image = ({src, alt}) => {
-    const [state, setState] = useState(false);
+    const [state, setState] = useState(typeof window === "undefined");
     const transparentPlaceholder=
         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAFCAQAAADIpIVQAAAADklEQVR42mNkgAJGIhgAALQABsHyMOcAAAAASUVORK5CYII=';
 
@@ -17,6 +18,7 @@ const Image = ({src, alt}) => {
                 alt={alt}
                 loading="lazy"
                 onLoad={handleImageLoad}
+                className={styles.loadedImage}
             />
         </>
     )

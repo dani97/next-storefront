@@ -6,9 +6,12 @@
 }
 
 .branch, .leaf {
-    width: 100%;
-    display: flex;
     justify-content: space-between;
+}
+
+.branch, .leaf, .controls {
+    display: flex;
+    padding: 0.2rem 0;
     border-bottom: 2px solid var(--secondary-color);
 }
 

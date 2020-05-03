@@ -1,6 +1,6 @@
 .productGrid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
     row-gap: 1rem;
     height: auto;
@@ -8,7 +8,7 @@
 
 @media (min-width: 768px) {
     .productGrid {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
         height: auto;
     }
 }

@@ -4,7 +4,6 @@ import Head from "next/head";
 import { useQuery } from "@apollo/react-hooks";
 import { useRouter } from "next/router";
 import GET_CATEGORY from '../../queries/getCategory.graphql';
-import LoadingIndicator from "../../components/LoadingIndicator";
 import ErrorPage from "next/error";
 import ProductGrid from "../../components/ProductGrid";
 import Pagination from "../../components/Pagination";
@@ -20,7 +19,7 @@ const Category = ()=> {
             pageSize: 6
         }
     });
-    if (error) { console.log(error); return <ErrorPage statusCode={404}/>}
+    if (error) { return <ErrorPage statusCode={404}/>}
     if (loading) return <GridSkeleton/>;
     const category = data.categoryList[0];
     if (!category) {

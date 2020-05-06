@@ -6,7 +6,7 @@ const GridCard = (props) => {
     function getCardSkeletonStyle() {
         const innerWidth  = typeof window !== "undefined" ? window.innerWidth : 600;
         let height = "60vh";
-        if (innerWidth > 768) {
+        if (innerWidth > 900) {
             height = "80vh";
         }
         return {

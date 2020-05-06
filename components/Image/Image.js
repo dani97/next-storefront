@@ -8,7 +8,6 @@ const Image = ({src, alt}) => {
                 src={src+"?auto=webp&format=pjpg&width=840&height=375&fit=cover"}
                 alt={alt}
                 loading="lazy"
-                className={styles.loadedImage}
             />
         </>
     )

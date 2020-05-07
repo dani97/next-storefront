@@ -16,7 +16,7 @@
     --header-height: 4rem;
     --footer-height: 5rem;
     --dark-text: #4c4c4c;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 a {
@@ -97,10 +97,4 @@ table {
 .carousel .thumbs-wrapper .thumb:hover {
     background: #000;
     border: 3px solid #fff;
-}
-
-@media (min-width: 768px) {
-    :root {
-        font-size: 20px;
-    }
 }

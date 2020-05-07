@@ -6,10 +6,14 @@
     background: var(--button-color);
     cursor: pointer;
 }
-
+.qtyBox::-webkit-outer-spin-button,
+.qtyBox::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .qtyBox {
     width: 2.5rem;
-    -webkit-appearance: none;
+    -webkit-appearance: textfield;
     -moz-appearance: textfield;
     height: 2rem;
     box-sizing: border-box;

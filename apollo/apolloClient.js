@@ -1,33 +1,31 @@
-
-import { ApolloClient } from 'apollo-client';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
-import fetch from 'isomorphic-unfetch';
-import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
-import introspectionQueryResultData from '../fragmentTypes.json';
+import {ApolloClient} from "apollo-client";
+import {InMemoryCache, IntrospectionFragmentMatcher} from "apollo-cache-inmemory";
+import {HttpLink} from "apollo-link-http";
+import fetch from "isomorphic-unfetch";
+import introspectionQueryResultData from "../fragmentTypes.json";
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
-    introspectionQueryResultData
+    introspectionQueryResultData,
 });
 
 export default function createApolloClient(initialState, ctx) {
     // The `ctx` (NextPageContext) will only be present on the server.
     // use it to extract auth headers (ctx.req) or similar.
     let link;
-    if (typeof window === 'undefined') {
+    if (typeof window === "undefined") {
         link = new HttpLink({
-            uri: 'https://venia.magento.com/graphql',
+            uri: "https://venia.magento.com/graphql",
             fetch,
-        })
+        });
     } else {
         link = new HttpLink({
-            uri: '/api/graphql',
+            uri: "/api/graphql",
             fetch,
-        })
+        });
     }
     return new ApolloClient({
         ssrMode: Boolean(ctx),
         link,
-        cache: new InMemoryCache({fragmentMatcher}).restore(initialState)
-    })
+        cache: new InMemoryCache({fragmentMatcher}).restore(initialState),
+    });
 }

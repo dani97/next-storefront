@@ -1,12 +1,11 @@
-import React from 'react';
-import {Carousel} from 'react-responsive-carousel';
-import style from './ImageSlider.module.css';
+import React from "react";
+import {Carousel} from "react-responsive-carousel";
+import style from "./ImageSlider.module.css";
 
-const ImageSlider = ( {photos} ) => {
-
+const ImageSlider = ({photos}) => {
     function getResponsiveConfig(photoUrl) {
-        const formatValue = 'pjpg',
-            autoValue = 'webp',
+        const formatValue = "pjpg",
+            autoValue = "webp",
             configArray = [
                 [40, 50, 40],
                 [80, 100, 80],
@@ -15,17 +14,32 @@ const ImageSlider = ( {photos} ) => {
                 [640, 800, 640],
                 [1280, 1600, 1280],
                 [1600, 2000, 1600],
-                [2560, 3200, 2560]
+                [2560, 3200, 2560],
             ],
-            sizes = "(max-width: 500px) 640px, (max-width: 900px) 1600px,(max-width: 1400px) 1280px, 2560px",
-            fitValue= 'cover';
-        let srcSet = '';
+            sizes =
+                "(max-width: 500px) 640px, (max-width: 900px) 1600px,(max-width: 1400px) 1280px, 2560px",
+            fitValue = "cover";
+        let srcSet = "";
         for (const config of configArray) {
-            srcSet = srcSet + photoUrl + '?'+ 'auto='+autoValue + '&format=' + formatValue + '&width='
-                + String(config[0]) + '&height=' + String(config[1]) +
-                '&fit='+fitValue + ' ' + String(config[2]) + 'w,';
+            srcSet =
+                srcSet +
+                photoUrl +
+                "?" +
+                "auto=" +
+                autoValue +
+                "&format=" +
+                formatValue +
+                "&width=" +
+                String(config[0]) +
+                "&height=" +
+                String(config[1]) +
+                "&fit=" +
+                fitValue +
+                " " +
+                String(config[2]) +
+                "w,";
         }
-        return {srcSet, sizes}
+        return {srcSet, sizes};
     }
 
     return (
@@ -60,21 +74,22 @@ const ImageSlider = ( {photos} ) => {
                     );
                 }}
             >
-                {
-                    photos.map((photo, index) => {
-                        const photoUrl = photo.url;
-                        const {srcSet, sizes} = getResponsiveConfig(photoUrl);
-                        return <img key={index}
-                                    alt={photo.label}
-                                    src={photoUrl}
-                                    srcSet={srcSet}
-                                    sizes={sizes}
-                            />
-                    })
-                }
+                {photos.map((photo, index) => {
+                    const photoUrl = photo.url;
+                    const {srcSet, sizes} = getResponsiveConfig(photoUrl);
+                    return (
+                        <img
+                            key={index}
+                            alt={photo.label}
+                            src={photoUrl}
+                            srcSet={srcSet}
+                            sizes={sizes}
+                        />
+                    );
+                })}
             </Carousel>
         </div>
-    )
+    );
 };
 
 export default ImageSlider;

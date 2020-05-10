@@ -1,9 +1,5 @@
-export const findMatchingVariant = ({
-                                        variants,
-                                        selectedOptions
-                                    }) => {
-    return variants.find(({ attributes}) => {
-
+export const findMatchingVariant = ({ variants, selectedOptions }) => {
+    return variants.find(({ attributes }) => {
         const customAttributes = (attributes || []).reduce(
             (map, { code, value_index }) => new Map(map).set(code, value_index),
             new Map()
@@ -11,9 +7,9 @@ export const findMatchingVariant = ({
 
         let isSelected = true;
         customAttributes.forEach((value, key) => {
-           if (selectedOptions.get(key) !== value) {
-               isSelected = false;
-           }
+            if (selectedOptions.get(key) !== value) {
+                isSelected = false;
+            }
         });
 
         return isSelected;

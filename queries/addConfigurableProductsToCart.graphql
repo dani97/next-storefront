@@ -8,10 +8,7 @@ mutation addConfigurableProductToCart(
         input: {
             cart_id: $cartId
             cart_items: [
-                {
-                    data: { quantity: $quantity, sku: $sku }
-                    parent_sku: $parentSku
-                }
+                { data: { quantity: $quantity, sku: $sku }, parent_sku: $parentSku }
             ]
         }
     ) {

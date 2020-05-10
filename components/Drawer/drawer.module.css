@@ -1,7 +1,7 @@
 .drawer {
     height: 100vh;
     background: var(--secondary-background);
-    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
     left: 0;

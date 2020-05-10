@@ -1,10 +1,10 @@
 query category(
     $urlKey: String!
     $currentPage: Int!
-    $onServer: Boolean!,
+    $onServer: Boolean!
     $pageSize: Int
 ) {
-    categoryList(filters: {url_key: {eq: $urlKey}}) {
+    categoryList(filters: { url_key: { eq: $urlKey } }) {
         id
         description
         name

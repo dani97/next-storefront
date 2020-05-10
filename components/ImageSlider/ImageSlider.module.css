@@ -13,7 +13,8 @@
     background: var(--secondary-background);
 }
 
-.indicatorDefault, .indicatorSelected {
+.indicatorDefault,
+.indicatorSelected {
     width: 8px;
     height: 8px;
     display: inline-block;

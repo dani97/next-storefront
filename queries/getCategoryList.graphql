@@ -1,10 +1,5 @@
 query($ids: [String]) {
-    categoryList(filters: {
-        ids: {
-            in: $ids
-        }
-    }
-    ) {
+    categoryList(filters: { ids: { in: $ids } }) {
         include_in_menu
         url_key
         children_count

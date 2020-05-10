@@ -1,36 +1,36 @@
-import React from 'react';
-import { withApollo } from '../../apollo/apollo';
+import React from "react";
+import { withApollo } from "../../apollo/apollo";
 import Head from "next/head";
 import { useQuery } from "@apollo/react-hooks";
 import { useRouter } from "next/router";
-import GET_PRODUCT_DETAIL from '../../queries/getProductDetail.graphql';
+import GET_PRODUCT_DETAIL from "../../queries/getProductDetail.graphql";
 import ProductDetail from "../../components/ProductDetail";
 import ErrorPage from "next/error";
 import PdpSkeleton from "../../components/ProductDetail/PdpSkeleton";
 
-const Product = ()=> {
+const Product = () => {
     const router = useRouter();
-    const {error, loading, data } = useQuery(GET_PRODUCT_DETAIL, {
-        variables: { urlKey: router.query.uid , onServer: true}
+    const { error, loading, data } = useQuery(GET_PRODUCT_DETAIL, {
+        variables: { urlKey: router.query.uid, onServer: true },
     });
-    if (loading) return <PdpSkeleton/>;
+    if (loading) return <PdpSkeleton />;
     if (error) return <div> Error Fetching Product</div>;
     let product, title;
     try {
         product = data.productDetail.items[0];
-        title = product.meta_title
+        title = product.meta_title;
     } catch (e) {
-        return <ErrorPage statusCode={404}/>
+        return <ErrorPage statusCode={404} />;
     }
     return (
         <>
             <Head>
                 <title>{title}</title>
-                <meta name="description" content={product.meta_description}/>
+                <meta name="description" content={product.meta_description} />
             </Head>
-            <ProductDetail product={ product }/>
+            <ProductDetail product={product} />
         </>
     );
 };
 
-export default withApollo({ ssr: true})(Product);
+export default withApollo({ ssr: true })(Product);

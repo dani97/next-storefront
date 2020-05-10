@@ -1,5 +1,5 @@
 mutation signOut {
-    revokeCustomerToken {
-        result
-    }
+  revokeCustomerToken {
+    result
+  }
 }

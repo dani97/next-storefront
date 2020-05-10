@@ -1,17 +1,17 @@
-import React from 'react';
-import styles from'./ProductGrid.module.css';
+import React from "react";
+import styles from "./ProductGrid.module.css";
 import ContentLoader from "react-content-loader";
 
 const GridCard = (props) => {
     function getCardSkeletonStyle() {
-        const innerWidth  = typeof window !== "undefined" ? window.innerWidth : 600;
+        const innerWidth = typeof window !== "undefined" ? window.innerWidth : 600;
         let height = "60vh";
         if (innerWidth > 900) {
             height = "80vh";
         }
         return {
-            width : "100%",
-            height
+            width: "100%",
+            height,
         };
     }
 
@@ -22,11 +22,12 @@ const GridCard = (props) => {
             backgroundColor="#3a3a3a"
             foregroundColor="#a3a3a3"
             speed={2}
-            uniqueKey={"clp-skeleton-"+props.uniqueKey}
+            uniqueKey={"clp-skeleton-" + props.uniqueKey}
         >
-            <rect x="0" y="0" rx="0" ry="0" width="100%" height="100%" />
-        </ContentLoader>)
-}
+            <rect x="0" y="0" rx="0" ry="0" width="100%" height="100%"/>
+        </ContentLoader>
+    );
+};
 const GridSkeleton = () => {
     return (
         <div className={styles.productGrid}>
@@ -37,7 +38,7 @@ const GridSkeleton = () => {
             <GridCard uniqueKey={5}/>
             <GridCard uniqueKey={6}/>
         </div>
-    )
-}
+    );
+};
 
 export default GridSkeleton;

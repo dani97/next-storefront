@@ -5,17 +5,20 @@
     flex-direction: column;
 }
 
-.branch, .leaf {
+.branch,
+.leaf {
     justify-content: space-between;
 }
 
-.branch, .leaf, .controls {
+.branch,
+.leaf,
+.controls {
     display: flex;
     padding: 0.2rem 0;
     border-bottom: 2px solid var(--secondary-color);
 }
 
-.branch svg{
+.branch svg {
     border-left: 1px solid;
     cursor: pointer;
 }

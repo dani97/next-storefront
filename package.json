@@ -6,7 +6,8 @@
     "dev": "next dev",
     "codegen": "graphql-codegen",
     "build": "yarn codegen && next build",
-    "start": "next start"
+    "start": "next start",
+    "prettier": "prettier --loglevel warn --write '@(components|pages|apollo|queries|util)/**/*.@(css|graphql|js)' '*.js'"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.4",

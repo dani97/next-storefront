@@ -13,7 +13,7 @@
     outline: none;
 }
 
-.hamburger:hover .hamburgerLine{
+.hamburger:hover .hamburgerLine {
     background: var(--primary-color-active);
 }
 

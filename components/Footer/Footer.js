@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import Link from "next/link";
-import style from './Footer.module.css';
+import style from "./Footer.module.css";
 
 const Footer = () => (
     <footer className={style.footer}>
@@ -16,7 +16,10 @@ const Footer = () => (
                 </Link>
             </div>
             <div>
-                <Link href="/cms/[uid]" as={"/cms/privacy-policy-cookie-restriction-mode"}>
+                <Link
+                    href="/cms/[uid]"
+                    as={"/cms/privacy-policy-cookie-restriction-mode"}
+                >
                     <a>Private Policy</a>
                 </Link>
             </div>

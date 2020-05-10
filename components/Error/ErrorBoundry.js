@@ -15,9 +15,10 @@ export default class ErrorBoundary extends React.Component {
         // You can also log the error to an error reporting service
         console.log(error, errorInfo);
     }
+
     render() {
-        if(this.state.hasError) {
-            return <p>Something Went Wrong</p>
+        if (this.state.hasError) {
+            return <p>Something Went Wrong</p>;
         }
         return this.props.children;
     }

@@ -1,1 +1,1 @@
-export { default } from './QtyBox';
+export {default} from "./QtyBox";

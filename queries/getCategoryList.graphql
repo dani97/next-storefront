@@ -1,18 +1,18 @@
 query($ids: [String]) {
-    categoryList(filters: { ids: { in: $ids } }) {
-        include_in_menu
-        url_key
-        children_count
-        id
-        name
-        path
-        children {
-            id
-            include_in_menu
-            url_key
-            children_count
-            name
-            path
-        }
+  categoryList(filters: { ids: { in: $ids } }) {
+    include_in_menu
+    url_key
+    children_count
+    id
+    name
+    path
+    children {
+      id
+      include_in_menu
+      url_key
+      children_count
+      name
+      path
     }
+  }
 }

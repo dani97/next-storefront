@@ -1,0 +1,16 @@
+{
+    "projects": {
+        "next-storefront": {
+            "schemaPath": "mySchema.json",
+            "extensions": {
+                "endpoints": {
+                    "default": "https://venia.magento.com/graphql"
+                },
+                "validate-magento-pwa-queries": {
+                    "clients": ["apollo", "literal"],
+                    "filesGlob": "queries/*.graphql"
+                }
+            }
+        }
+    }
+}

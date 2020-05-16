@@ -1,76 +1,76 @@
 .productGrid {
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    column-gap: 3rem;
-    padding: 1rem;
-    justify-items: center;
-    min-height: 60vh;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 3rem;
+  padding: 1rem;
+  justify-items: center;
+  min-height: 60vh;
 }
 
 .priceBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
-    .productGrid {
-        grid-template-columns: 1fr 1fr;
-    }
+  .productGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 
-    .productDetail {
-        width: 70%;
-    }
+  .productDetail {
+    width: 70%;
+  }
 }
 
 .productDetail {
-    padding: 1rem;
-    background: var(--secondary-background);
-    color: var(--secondary-color);
-    border-radius: 1rem;
+  padding: 1rem;
+  background: var(--secondary-background);
+  color: var(--secondary-color);
+  border-radius: 1rem;
 }
 
 .name {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-bottom: 1rem;
 }
 
 .sku {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .addToCart {
-    background: var(--primary-component-color);
-    color: var(--secondary-color);
-    height: 2rem;
-    border-radius: 1rem;
-    padding: 0 1.5rem;
-    cursor: pointer;
+  background: var(--primary-component-color);
+  color: var(--secondary-color);
+  height: 2rem;
+  border-radius: 1rem;
+  padding: 0 1.5rem;
+  cursor: pointer;
 }
 
 .quantityBox {
-    width: 4rem;
+  width: 4rem;
 }
 
 .cartForm {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 4rem;
 }
 
 .productDescription {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .productDescription ul {
-    padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 .productDescription li {
-    list-style-type: circle;
+  list-style-type: circle;
 }

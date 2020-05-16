@@ -1,50 +1,50 @@
 .header {
-    width: 100%;
-    background: var(--secondary-background);
-    height: var(--header-height);
-    z-index: 1;
-    padding: 0 0.2rem;
-    box-sizing: border-box;
+  width: 100%;
+  background: var(--secondary-background);
+  height: var(--header-height);
+  z-index: 1;
+  padding: 0 0.2rem;
+  box-sizing: border-box;
 }
 
 .headerNav {
-    display: flex;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .headerLogo a {
-    color: var(--secondary-color);
-    font-size: 1.5rem;
-    font-style: oblique;
-    margin: 1rem;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-style: oblique;
+  margin: 1rem;
 }
 
 .headerLogo a:hover {
-    color: var(--primary-color-active);
+  color: var(--primary-color-active);
 }
 
 .headerNavItems ul {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
 }
 
 .headerNavItems li {
-    padding: 0 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .headerNavItems a {
-    color: var(--secondary-color);
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  color: var(--secondary-color);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .headerNavItems a:hover,
 .headerNavItems a:active {
-    color: aqua;
+  color: aqua;
 }
 
 .spacer {
-    flex: 1;
+  flex: 1;
 }

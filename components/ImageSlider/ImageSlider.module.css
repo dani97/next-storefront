@@ -1,24 +1,24 @@
 @media (min-width: 768px) {
-    .slider {
-        width: 60%;
-        margin: 0 2rem;
-    }
+  .slider {
+    width: 60%;
+    margin: 0 2rem;
+  }
 }
 
 .indicatorSelected {
-    background: var(--primary-background);
+  background: var(--primary-background);
 }
 
 .indicatorDefault {
-    background: var(--secondary-background);
+  background: var(--secondary-background);
 }
 
 .indicatorDefault,
 .indicatorSelected {
-    width: 8px;
-    height: 8px;
-    display: inline-block;
-    margin: 0 8px;
-    cursor: pointer;
-    border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  margin: 0 8px;
+  cursor: pointer;
+  border-radius: 50%;
 }

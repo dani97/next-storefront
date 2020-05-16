@@ -1,24 +1,24 @@
 .hamburger {
-    background: transparent;
-    height: 1.3rem;
-    border: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background: transparent;
+  height: 1.3rem;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hamburger:focus {
-    outline: none;
+  outline: none;
 }
 
 .hamburger:hover .hamburgerLine {
-    background: var(--primary-color-active);
+  background: var(--primary-color-active);
 }
 
 .hamburgerLine {
-    width: 1.3rem;
-    height: 0.2rem;
-    background: #ffffff;
+  width: 1.3rem;
+  height: 0.2rem;
+  background: #ffffff;
 }

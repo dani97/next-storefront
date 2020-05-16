@@ -1,45 +1,45 @@
 query category(
-    $urlKey: String!
-    $currentPage: Int!
-    $onServer: Boolean!
-    $pageSize: Int
+  $urlKey: String!
+  $currentPage: Int!
+  $onServer: Boolean!
+  $pageSize: Int
 ) {
-    categoryList(filters: { url_key: { eq: $urlKey } }) {
-        id
-        description
+  categoryList(filters: { url_key: { eq: $urlKey } }) {
+    id
+    description
+    name
+    product_count
+    meta_title @include(if: $onServer)
+    meta_keywords @include(if: $onServer)
+    meta_description
+    image
+    products(currentPage: $currentPage, pageSize: $pageSize) {
+      items {
         name
-        product_count
-        meta_title @include(if: $onServer)
-        meta_keywords @include(if: $onServer)
-        meta_description
-        image
-        products(currentPage: $currentPage, pageSize: $pageSize) {
-            items {
-                name
-                price_range {
-                    minimum_price {
-                        final_price {
-                            currency
-                            value
-                        }
-                    }
-                    maximum_price {
-                        final_price {
-                            currency
-                            value
-                        }
-                    }
-                }
-                url_key
-                thumbnail {
-                    url
-                    label
-                }
+        price_range {
+          minimum_price {
+            final_price {
+              currency
+              value
             }
-            page_info {
-                current_page
-                total_pages
+          }
+          maximum_price {
+            final_price {
+              currency
+              value
             }
+          }
         }
+        url_key
+        thumbnail {
+          url
+          label
+        }
+      }
+      page_info {
+        current_page
+        total_pages
+      }
     }
+  }
 }

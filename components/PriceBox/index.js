@@ -1,1 +1,1 @@
-export {default} from "./PriceBox";
+export { default } from "./PriceBox";

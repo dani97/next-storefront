@@ -1,10 +1,10 @@
 query getAllCountries {
-    countries {
-        available_regions {
-            code
-            id
-            name
-        }
-        id
+  countries {
+    available_regions {
+      code
+      id
+      name
     }
+    id
+  }
 }

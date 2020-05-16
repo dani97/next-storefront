@@ -1,28 +1,28 @@
 mutation addConfigurableProductToCart(
-    $cartId: String!
-    $quantity: Float!
-    $sku: String!
-    $parentSku: String!
+  $cartId: String!
+  $quantity: Float!
+  $sku: String!
+  $parentSku: String!
 ) {
-    addConfigurableProductsToCart(
-        input: {
-            cart_id: $cartId
-            cart_items: [
-                { data: { quantity: $quantity, sku: $sku }, parent_sku: $parentSku }
-            ]
-        }
-    ) {
-        cart {
-            id
-            items {
-                id
-                product {
-                    id
-                    name
-                    sku
-                }
-                quantity
-            }
-        }
+  addConfigurableProductsToCart(
+    input: {
+      cart_id: $cartId
+      cart_items: [
+        { data: { quantity: $quantity, sku: $sku }, parent_sku: $parentSku }
+      ]
     }
+  ) {
+    cart {
+      id
+      items {
+        id
+        product {
+          id
+          name
+          sku
+        }
+        quantity
+      }
+    }
+  }
 }

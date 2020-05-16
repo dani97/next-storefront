@@ -1,28 +1,28 @@
 .qtyButtons {
-    border: none;
-    border-radius: 0.2rem;
-    width: 2rem;
-    height: 2rem;
-    background: var(--button-color);
-    cursor: pointer;
+  border: none;
+  border-radius: 0.2rem;
+  width: 2rem;
+  height: 2rem;
+  background: var(--button-color);
+  cursor: pointer;
 }
 
 .qtyBox::-webkit-outer-spin-button,
 .qtyBox::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .qtyBox {
-    width: 2.5rem;
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    height: 2rem;
-    box-sizing: border-box;
-    margin: 0 0.3rem;
-    text-align: center;
+  width: 2.5rem;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  height: 2rem;
+  box-sizing: border-box;
+  margin: 0 0.3rem;
+  text-align: center;
 }
 
 .qtyButtons:hover {
-    opacity: 0.75;
+  opacity: 0.75;
 }

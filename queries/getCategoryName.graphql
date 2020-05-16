@@ -1,6 +1,6 @@
 query getCategoryName($id: Int!) {
-    category(id: $id) {
-        id
-        name
-    }
+  category(id: $id) {
+    id
+    name
+  }
 }

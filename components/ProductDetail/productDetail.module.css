@@ -9,21 +9,13 @@
 }
 
 .priceBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 0;
-  width: 100%;
+  grid-area: pricebox;
 }
 
-@media (min-width: 768px) {
-  .productGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .productDetail {
-    width: 70%;
-  }
+.options {
+  grid-area: options;
+  text-align: center;
+  justify-self: center;
 }
 
 .productDetail {
@@ -31,16 +23,46 @@
   background: var(--secondary-background);
   color: var(--secondary-color);
   border-radius: 1rem;
+  display: grid;
+  grid-template-areas: 'name name'
+  'sku pricebox'
+  'options options'
+  'cartForm cartForm'
+  'description description';
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  grid-template-rows: repeat(5, min-content);
+}
+
+@media (min-width: 900px) {
+  .productGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .productDetail {
+    width: 75%;
+  }
+
+  .options {
+    text-align: left;
+    justify-self: left;
+  }
 }
 
 .name {
+  grid-area: name;
   font-size: 1.5rem;
   font-weight: bolder;
   margin-bottom: 1rem;
 }
 
 .sku {
-  margin-bottom: 1rem;
+  grid-area: sku;
+}
+
+.name, .sku, .priceBox {
+  text-align: center;
+  padding: 1rem 0;
 }
 
 .addToCart {
@@ -52,11 +74,8 @@
   cursor: pointer;
 }
 
-.quantityBox {
-  width: 4rem;
-}
-
 .cartForm {
+  grid-area: cartForm;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -64,6 +83,7 @@
 }
 
 .productDescription {
+  grid-area: description;
   padding: 1rem;
 }
 

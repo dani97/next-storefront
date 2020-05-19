@@ -18,10 +18,9 @@
         "apollo-link-http": "^1.5.17",
         "axios": "^0.19.2",
         "classnames": "^2.2.6",
+        "dotenv": "^8.2.0",
         "graphql": "^15.0.0",
         "graphql-tag": "^2.10.3",
-        "http-proxy-middleware": "^1.0.3",
-        "informed": "^3.6.1",
         "next": "^9.4.0",
         "next-offline": "^5.0.0",
         "prop-types": "^15.7.2",
@@ -29,7 +28,8 @@
         "react-content-loader": "^5.0.4",
         "react-dom": "^16.13.1",
         "react-feather": "^2.0.4",
-        "react-responsive-carousel": "^3.2.4"
+        "react-responsive-carousel": "^3.2.4",
+        "react-throttle": "^0.3.0"
     },
     "devDependencies": {
         "@graphql-codegen/cli": "^1.13.2",

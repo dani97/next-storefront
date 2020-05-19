@@ -12,6 +12,7 @@ const Product = () => {
   const router = useRouter();
   const { error, loading, data } = useQuery(GET_PRODUCT_DETAIL, {
     variables: { urlKey: router.query.uid, onServer: true },
+    fetchPolicy: "cache-and-network"
   });
   if (loading) return <PdpSkeleton />;
   if (error) return <div> Error Fetching Product</div>;

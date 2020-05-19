@@ -1,6 +1,9 @@
-@media (min-width: 768px) {
+.slider {
+  width: 100%;
+}
+@media (min-width: 900px) {
   .slider {
-    width: 60%;
+    width: 75%;
     margin: 0 2rem;
   }
 }

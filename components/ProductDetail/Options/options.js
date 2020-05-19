@@ -10,7 +10,7 @@ const optionsReducer = (state, action) => {
   return newState;
 };
 
-const Options = ({ optionGroups, variants }) => {
+const Options = ({ optionGroups, variants, className }) => {
   const [selectedOptions, optionsDispatch] = useReducer(
     optionsReducer,
     new Map()
@@ -27,7 +27,7 @@ const Options = ({ optionGroups, variants }) => {
   }, [variants, selectedOptions]);
 
   return (
-    <div>
+    <div className={className}>
       {optionGroups.map((options) => {
         const attributeCode = options.attribute_code;
         return (

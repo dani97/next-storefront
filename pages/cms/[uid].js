@@ -24,6 +24,7 @@ export async function getStaticProps({ params: { uid } }) {
       uid: uid,
       onServer: true,
     },
+    fetchPolicy: "no-cache"
   });
   return {
     props: {

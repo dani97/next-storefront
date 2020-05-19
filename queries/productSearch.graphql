@@ -1,8 +1,8 @@
 query productSearch(
   $currentPage: Int = 1
   $inputText: String!
-  $pageSize: Int = 6
-  $filters: ProductAttributeFilterInput!
+  $pageSize: Int = 3
+  $filters: ProductAttributeFilterInput
 ) {
   products(
     currentPage: $currentPage

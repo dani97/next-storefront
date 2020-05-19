@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import style from "./ImageSlider.module.css";
+import Image from "components/Image";
 
 const ImageSlider = ({ photos }) => {
   function getResponsiveConfig(photoUrl) {
@@ -42,6 +43,38 @@ const ImageSlider = ({ photos }) => {
     return { srcSet, sizes };
   }
 
+  const customIndicatorRenderer = (onClickHandler, isSelected, index, label) => {
+    if (isSelected) {
+      return (
+        <li
+          className={style.indicatorSelected}
+          aria-label={`Selected: ${label} ${index + 1}`}
+          title={`Selected: ${label} ${index + 1}`}
+        />
+      );
+    }
+    return (
+      <li
+        className={style.indicatorDefault}
+        onClick={onClickHandler}
+        onKeyDown={onClickHandler}
+        value={index}
+        key={index}
+        role="button"
+        tabIndex={0}
+        title={`${label} ${index + 1}`}
+        aria-label={`${label} ${index + 1}`}
+      />
+    );
+  }
+
+  const customThumbRenderer = (children) => {
+    return children.map((item, index) => {
+      const photoUrl = item.props.src + "?auto=webp&format=pjpg&width=80&height=100&fit=cover";
+      return <img src={ photoUrl } key={index}/>;
+    });
+  }
+
   return (
     <div className={style.slider}>
       <Carousel
@@ -49,36 +82,15 @@ const ImageSlider = ({ photos }) => {
         showArrows={false}
         infiniteLoop={true}
         swipeable={true}
-        renderIndicator={(onClickHandler, isSelected, index, label) => {
-          if (isSelected) {
-            return (
-              <li
-                className={style.indicatorSelected}
-                aria-label={`Selected: ${label} ${index + 1}`}
-                title={`Selected: ${label} ${index + 1}`}
-              />
-            );
-          }
-          return (
-            <li
-              className={style.indicatorDefault}
-              onClick={onClickHandler}
-              onKeyDown={onClickHandler}
-              value={index}
-              key={index}
-              role="button"
-              tabIndex={0}
-              title={`${label} ${index + 1}`}
-              aria-label={`${label} ${index + 1}`}
-            />
-          );
-        }}
+        renderIndicator={ customIndicatorRenderer }
+        renderThumbs={customThumbRenderer}
+        showThumbs={true}
       >
         {photos.map((photo, index) => {
           const photoUrl = photo.url;
           const { srcSet, sizes } = getResponsiveConfig(photoUrl);
           return (
-            <img
+            <Image
               key={index}
               alt={photo.label}
               src={photoUrl}

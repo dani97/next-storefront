@@ -5,7 +5,7 @@ const httpsAgent = new https.Agent({
   rejectUnauthorized: false,
 });
 
-const url = "https://venia.magento.com/graphql";
+const url = process.env.MAGENTO_GRAPHQL_ENDPOINT;
 
 const handler = async (request, response) => {
   delete request.headers.host;

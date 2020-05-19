@@ -1,5 +1,21 @@
-.loaded-image {
-  position: absolute;
-  left: 0;
+.placeholder {
+  position: relative;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  visibility: visible;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  visibility: visible;
+}
+
+.container {
+  position: relative;
 }

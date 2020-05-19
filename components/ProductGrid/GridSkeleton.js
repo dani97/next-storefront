@@ -5,7 +5,7 @@ import ContentLoader from "react-content-loader";
 const GridCard = (props) => {
   function getCardSkeletonStyle() {
     const innerWidth = typeof window !== "undefined" ? window.innerWidth : 600;
-    let height = "60vh";
+    let height = "40vh";
     if (innerWidth > 900) {
       height = "80vh";
     }

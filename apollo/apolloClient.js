@@ -16,7 +16,7 @@ export default function createApolloClient(initialState, ctx) {
   let link;
   if (typeof window === "undefined") {
     link = new HttpLink({
-      uri: "https://venia.magento.com/graphql",
+      uri: process.env.MAGENTO_GRAPHQL_ENDPOINT,
       fetch,
     });
   } else {

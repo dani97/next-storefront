@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import style from "./header.module.css";
 import { Hamburger } from "components/Drawer";
-import { Search, ShoppingCart, User } from "react-feather";
+import {Search, ShoppingCart, User} from "react-feather";
 
 const Header = (props) => (
   <header className={style.header}>
@@ -15,15 +15,13 @@ const Header = (props) => (
           <a>Next Storefront</a>
         </Link>
       </div>
-      <div className={style.spacer}></div>
+      <div className={style.spacer}/>
       <div className={style.headerNavItems}>
         <ul>
           <li>
-            <Link href="/search">
               <a>
-                <Search />
+                <Search onClick={props.searchBoxHandler}/>
               </a>
-            </Link>
           </li>
           <li>
             <Link href="#">

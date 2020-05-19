@@ -14,6 +14,7 @@ const ProductDetail = ({ product }) => {
       return (
         <Options
           optionGroups={product.configurable_options}
+          className={style.options}
           variants={product.variants}
         />
       );

@@ -10,8 +10,10 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#72B340" />
           <link rel="apple-touch-icon" href="/icon-192.png" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@600&display=swap"
-            rel="stylesheet"
+            rel="preload"
+            href="/fonts/Baloo_Paaji_2.woff2"
+            as= "font"
+            crossOrigin=""
           />
         </Head>
         <body>

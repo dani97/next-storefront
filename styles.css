@@ -3,7 +3,7 @@
     --primary-background: #121212;
     --primary-color: #e1e1e1;
     --disabled-component-font-color: #545151;
-    --secondary-background: #3a3a3a;
+    --secondary-background: #2d2d2d;
     --secondary-color: #dfdfdf;
     --text-alt: #cfcfcf;
     --primary-component-color: #654a85;
@@ -74,7 +74,6 @@ blockquote, q {
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
     content: none;
 }
 table {

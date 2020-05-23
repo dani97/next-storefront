@@ -15,14 +15,16 @@ import Image from "components/Image";
  * @param called
  * @param loading
  * @param data
+ * @param clearResults
+ * @param onClick
  * @returns {*}
  * @constructor
  */
-const SearchResults = ({show, called, loading, data, clearResults}) => {
+const SearchResults = ({show, called, loading, data, clearResults, onClick}) => {
   if (!show || (called && !loading && !data)) return <ul/>
 
   else if (!called || clearResults) return (
-    <ul className={styles.searchList}>
+    <ul className={styles.searchList} onClick={onClick}>
       <li>
         Search your favorites
       </li>
@@ -30,19 +32,19 @@ const SearchResults = ({show, called, loading, data, clearResults}) => {
   );
 
   else if (called && loading) return (
-    <ul className={styles.searchList}>
+    <ul className={styles.searchList}  onClick={onClick}>
       <li> Loading Results ...</li>
     </ul>
   );
 
   else if (called && !loading && data.products.items.length === 0) return (
-    <ul className={styles.searchList}>
+    <ul className={styles.searchList}  onClick={onClick}>
       <li> Product Not Found</li>
     </ul>
   )
 
   else if (called && !loading && data) return (
-    <ul className={styles.searchList}>
+    <ul className={styles.searchList}  onClick={onClick}>
       {
         data.products.items.map((product) => (
           <Link href="/product/[uid]" as={"/product/" + product.url_key}>
@@ -60,7 +62,7 @@ const SearchResults = ({show, called, loading, data, clearResults}) => {
       }
     </ul>
   )
-  return <ul className={styles.searchList}>
+  return <ul className={styles.searchList}  onClick={onClick}>
     <li>Loading Results ...</li>
   </ul>
 }
@@ -116,6 +118,7 @@ const SearchBox = ({open}) => {
         loading={loading}
         clearResults={clearResults}
         show={searchBox.current && resultsVisibility}
+        onClick={() => setResultsVisibility(false)}
       />
     </div>
   )

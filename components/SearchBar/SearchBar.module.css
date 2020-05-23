@@ -4,6 +4,10 @@
   display: none;
   background: var(--secondary-background);
   padding: 0.2rem 0;
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  z-index: 1;
 }
 
 .open {
@@ -33,7 +37,7 @@
 }
 
 .searchResult {
-  z-index: 2;
+  z-index: 1;
   position: relative;
   height: 4rem;
   display: grid;

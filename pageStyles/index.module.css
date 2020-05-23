@@ -1,0 +1,9 @@
+.carousalSection {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .carousalSection {
+    display: none;
+  }
+}

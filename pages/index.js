@@ -4,6 +4,7 @@ import { getHomePage } from "prismic/api";
 import Banner from "components/Banner";
 import { Carousel } from "react-responsive-carousel";
 import TextBanner from "components/TextBanner";
+import styles from 'pageStyles/index.module.css';
 
 const index = ({ preview, contents }) => {
   return (
@@ -34,7 +35,7 @@ const index = ({ preview, contents }) => {
             ctlLink="/category/venia-sweaters"
           />
         </section>
-        <section>
+        <section className={styles.carousalSection}>
           {contents.body.map((content, index) => {
             if (content.type === "image_gallery") {
               return (
@@ -52,6 +53,7 @@ const index = ({ preview, contents }) => {
                       <img
                         src={image.gallery_image.url}
                         alt={image.image_captions[0].text}
+                        loading="lazy"
                       />
                       <p className="legend">{image.image_captions[0].text}</p>
                     </div>

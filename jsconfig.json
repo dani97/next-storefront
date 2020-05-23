@@ -6,7 +6,8 @@
             "queries": ["queries"],
             "util": ["util"],
             "apollo": ["apollo"],
-            "prismic": ["prismic"]
+            "prismic": ["prismic"],
+            "pageStyles": ["pageStyles"]
         }
     }
 }

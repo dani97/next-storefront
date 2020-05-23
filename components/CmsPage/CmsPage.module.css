@@ -1,0 +1,45 @@
+.cmsPage {
+  margin: 1rem;
+  padding: 1rem;
+  background: var(--secondary-background);
+  border-radius: 0.2rem;
+}
+
+.cmsPage p,
+.cmsPage ul,
+.cmsPage li,
+.cmsPage h2 {
+  margin-bottom: 1rem;
+}
+
+.cmsPage a {
+  color: var(--primary-color-active);
+  text-decoration: none;
+}
+
+.cmsPage a:hover {
+  text-decoration: underline;
+}
+
+.title {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.contents td,
+.contents th {
+  word-wrap: anywhere;
+  padding: 0.5rem 0;
+}
+
+.contents thead tr {
+  background: var(--primary-component-color);
+}
+
+.contents tbody tr:nth-child(odd) {
+  background: var(--primary-background);
+}
+
+.contents tr:nth-child(even) {
+  background: var(--secondary-background);
+}

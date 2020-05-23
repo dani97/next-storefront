@@ -18,7 +18,7 @@ const Category = () => {
       currentPage: router.query.page ?? 1,
       pageSize: 6,
     },
-    fetchPolicy: "cache-first"
+    fetchPolicy: "cache-first",
   });
   if (error) {
     return <ErrorPage statusCode={404} />;

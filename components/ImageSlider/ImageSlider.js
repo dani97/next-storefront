@@ -43,7 +43,12 @@ const ImageSlider = ({ photos }) => {
     return { srcSet, sizes };
   }
 
-  const customIndicatorRenderer = (onClickHandler, isSelected, index, label) => {
+  const customIndicatorRenderer = (
+    onClickHandler,
+    isSelected,
+    index,
+    label
+  ) => {
     if (isSelected) {
       return (
         <li
@@ -66,14 +71,15 @@ const ImageSlider = ({ photos }) => {
         aria-label={`${label} ${index + 1}`}
       />
     );
-  }
+  };
 
   const customThumbRenderer = (children) => {
     return children.map((item, index) => {
-      const photoUrl = item.props.src + "?auto=webp&format=pjpg&width=80&height=100&fit=cover";
-      return <img src={ photoUrl } key={index}/>;
+      const photoUrl =
+        item.props.src + "?auto=webp&format=pjpg&width=80&height=100&fit=cover";
+      return <img src={photoUrl} key={index} />;
     });
-  }
+  };
 
   return (
     <div className={style.slider}>
@@ -82,7 +88,7 @@ const ImageSlider = ({ photos }) => {
         showArrows={false}
         infiniteLoop={true}
         swipeable={true}
-        renderIndicator={ customIndicatorRenderer }
+        renderIndicator={customIndicatorRenderer}
         renderThumbs={customThumbRenderer}
         showThumbs={true}
       >

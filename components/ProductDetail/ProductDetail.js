@@ -44,9 +44,7 @@ const ProductDetail = ({ product }) => {
 
           <div className={style.cartForm}>
             <QtyBox defaultValue={1} stepper={1} />
-            <button className={style.addToCart}>
-              Add To Cart
-            </button>
+            <button className={style.addToCart}>Add To Cart</button>
           </div>
           <div
             className={style.productDescription}

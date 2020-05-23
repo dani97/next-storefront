@@ -97,3 +97,11 @@ table {
     background: #000;
     border: 3px solid #fff;
 }
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}

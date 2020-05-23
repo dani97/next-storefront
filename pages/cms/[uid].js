@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Head from "next/head";
 import GET_CMS from "queries/getCmsPage.graphql";
 import createApolloClient from "apollo/apolloClient";
+import CmsPage from "components/CmsPage";
 
 const cms = ({ page }) => {
   return (
@@ -10,8 +11,7 @@ const cms = ({ page }) => {
         <title>{page.title}</title>
         <meta name="description" content={page.meta_description} />
       </Head>
-      <h1>{page.content_heading}</h1>
-      <div dangerouslySetInnerHTML={{ __html: page.content }}></div>
+      <CmsPage title={page.content_heading} contents={page.content} />
     </Fragment>
   );
 };
@@ -24,7 +24,7 @@ export async function getStaticProps({ params: { uid } }) {
       uid: uid,
       onServer: true,
     },
-    fetchPolicy: "no-cache"
+    fetchPolicy: "no-cache",
   });
   return {
     props: {

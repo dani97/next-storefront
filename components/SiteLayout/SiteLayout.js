@@ -6,8 +6,7 @@ import BackDrop from "components/Backdrop";
 import Drawer, { DrawerContext } from "components/Drawer";
 import dynamic from "next/dynamic";
 
-
-const SearchBar = dynamic(() => import("components/SearchBar"), {ssr: false});
+const SearchBar = dynamic(() => import("components/SearchBar"), { ssr: false });
 
 /**
  *
@@ -25,7 +24,7 @@ const SiteLayout = ({ children }) => {
 
   const toggleSearchBoxOpen = () => {
     setSearchBarOpen(!searchBarOpen);
-  }
+  };
 
   const closeOnBackdrop = () => {
     setDrawerOpen(false);
@@ -38,8 +37,11 @@ const SiteLayout = ({ children }) => {
   return (
     <div>
       <DrawerContext.Provider value={{ drawerOpen, setDrawerOpen }}>
-        <Header drawerOpenHandler={toggleDrawerOpen} searchBoxHandler={toggleSearchBoxOpen}/>
-        <SearchBar open={searchBarOpen}/>
+        <Header
+          drawerOpenHandler={toggleDrawerOpen}
+          searchBoxHandler={toggleSearchBoxOpen}
+        />
+        <SearchBar open={searchBarOpen} />
         <div className={style.content}>
           <Drawer open={drawerOpen} title="Menu" />
           {backDrop}

@@ -1,15 +1,15 @@
 import React from "react";
-import styles from './Image.module.css';
+import styles from "./Image.module.css";
 
-const transparentPlaceholder = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAFCAQAAADIpIVQAAAADklEQVR42mNkgAJGIhgAALQABsHyMOcAAAAASUVORK5CYII=';
-
+const transparentPlaceholder =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAFCAQAAADIpIVQAAAADklEQVR42mNkgAJGIhgAALQABsHyMOcAAAAASUVORK5CYII=";
 
 const Image = ({ src, alt }) => {
   return (
     <div className={styles.container}>
       <img
         src={transparentPlaceholder}
-        alt={alt || ''}
+        alt={alt || ""}
         loading="eager"
         className={styles.placeholder}
         width={840}

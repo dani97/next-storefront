@@ -3,8 +3,8 @@ import styles from "./productDetail.module.css";
 import ContentLoader from "react-content-loader";
 
 const BoxSkeleton = (props) => {
-  const innerWidth = typeof window !== "undefined" ? window.innerWidth : 600;
-  const width = innerWidth > 900 ? "75%": "100%";
+  const innerWidth = typeof window !== "undefined" ? window.innerWidth : 1000;
+  const width = innerWidth > 900 ? "75%" : "100%";
   return (
     <ContentLoader
       {...props}

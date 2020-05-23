@@ -7,12 +7,13 @@ import GET_PRODUCT_DETAIL from "queries/getProductDetail.graphql";
 import ProductDetail from "components/ProductDetail";
 import ErrorPage from "next/error";
 import PdpSkeleton from "components/ProductDetail/PdpSkeleton";
+import LoadingIndicator from "components/LoadingIndicator";
 
 const Product = () => {
   const router = useRouter();
   const { error, loading, data } = useQuery(GET_PRODUCT_DETAIL, {
     variables: { urlKey: router.query.uid, onServer: true },
-    fetchPolicy: "cache-and-network"
+    fetchPolicy: "cache-and-network",
   });
   if (loading) return <PdpSkeleton />;
   if (error) return <div> Error Fetching Product</div>;

@@ -4,6 +4,7 @@
   text-align: center;
   display: grid;
   grid-template-columns: 1fr;
+  cursor: pointer;
 }
 
 .cardTextArea {

@@ -1,0 +1,52 @@
+query home {
+    home_page(uid: "home", lang: "en-us") {
+        title
+        welcome_text
+        body {
+            ... on Home_pageBodyImage_gallery {
+                type
+                label
+                primary {
+                    name_of_the_gallery
+                }
+                fields {
+                    image_captions
+                    gallery_image
+                }
+            }
+            ... on Home_pageBodyBanner_with_caption {
+                type
+                label
+                primary {
+                    image_banner
+                    title_of_banner
+                    description
+                    button_label
+                    button_link {
+                        _linkType
+                    }
+                }
+            }
+            ... on Home_pageBodyList_of_articles {
+                type
+                label
+                primary {
+                    title_of_section
+                }
+                fields {
+                    articles_to_link {
+                        _linkType
+                    }
+                }
+            }
+            ... on Home_pageBodyMyslice {
+                type
+                label
+            }
+        }
+        _meta {
+            tags
+            type
+        }
+    }
+}

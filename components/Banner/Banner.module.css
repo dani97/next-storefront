@@ -1,6 +1,6 @@
 .banner {
   width: 100%;
-  height: 70vh;
+  height: 65vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,6 +19,32 @@
   padding: 0.7rem;
 }
 
+.bannerHeader {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.container {
+  background: var(--button-color);
+  background-image: linear-gradient(
+    315deg,
+    var(--button-color) 30%,
+    #f5f7f6 70%
+  );
+}
+
+.ctlText {
+  font-family: "Shadows into Light", sans-serif;
+  font-size: 2rem;
+  color: var(--primary-background);
+  font-weight: bold;
+}
+
+.ctlText:hover {
+  color: var(--primary-component-color);
+  cursor: pointer;
+}
+
 @media (max-width: 900px) {
   .container {
     height: auto;
@@ -26,23 +52,12 @@
     width: 50%;
     left: 25%;
   }
-}
 
-.bannerHeader {
-  font-size: 2rem;
-}
+  .bannerHeader h1 {
+    font-size: 1.5rem;
+  }
 
-.container {
-  background: var(--button-color);
-}
-
-.ctlText {
-  font-family: "Shadows into Light", sans-serif;
-  font-size: 2rem;
-  color: var(--primary-background);
-}
-
-.ctlText:hover {
-  color: var(--primary-background);
-  cursor: pointer;
+  .ctlText {
+    font-size: 1.2rem;
+  }
 }

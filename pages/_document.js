@@ -12,13 +12,13 @@ class MyDocument extends Document {
           <link
             rel="preload"
             href="/fonts/Baloo_Paaji_2.woff2"
-            as= "font"
+            as="font"
             crossOrigin=""
           />
           <link
             rel="preload"
             href="/fonts/shadows_into_light.woff2"
-            as= "font"
+            as="font"
             crossOrigin=""
           />
         </Head>

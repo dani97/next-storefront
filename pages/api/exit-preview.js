@@ -1,1 +1,1 @@
-import { prismicClient } from 'prismic/api';
+import { prismicClient } from "prismic/api";

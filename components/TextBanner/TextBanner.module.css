@@ -1,0 +1,67 @@
+.banner {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: grid;
+  grid-template-areas: "link text";
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.bannerHeader {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.textContainer,
+.linkContainer {
+  background: var(--secondary-background);
+  padding: 1rem;
+}
+
+.textContainer {
+  grid-area: text;
+}
+
+.linkContainer {
+  grid-area: link;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-background);
+}
+
+.ctlText {
+  background: var(--secondary-background);
+  padding: 0.5rem;
+  font-family: "Shadows into Light", sans-serif;
+  font-size: 2rem;
+  color: var(--primary-background);
+  font-weight: bold;
+}
+
+.ctlText:hover {
+  color: var(--primary-color-active);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .banner {
+    grid-template-areas:
+      "link"
+      "text";
+    grid-template-columns: 1fr;
+  }
+
+  .linkContainer {
+    min-height: 40vh;
+  }
+
+  .bannerHeader h1 {
+    font-size: 1.5rem;
+  }
+
+  .ctlText {
+    font-size: 1.2rem;
+  }
+}

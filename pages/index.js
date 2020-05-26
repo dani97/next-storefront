@@ -11,6 +11,7 @@ const index = ({ preview, contents }) => {
     <>
       <Head>
         <title>{contents.title[0].text}</title>
+        <meta name="description" content="Magento 2 PWA reference built with Next JS framework"/>
       </Head>
       <div>
         <section>

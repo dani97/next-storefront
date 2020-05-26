@@ -25,7 +25,7 @@ const Footer = () => (
       </div>
     </div>
     <div className={style.about}>
-      PWA built with next JS and Magento 2 - Developed By Chris Daniel
+      PWA built with next JS and Magento 2 - Developed By Christopher Daniel
     </div>
   </footer>
 );

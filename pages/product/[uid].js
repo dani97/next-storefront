@@ -7,7 +7,6 @@ import GET_PRODUCT_DETAIL from "queries/getProductDetail.graphql";
 import ProductDetail from "components/ProductDetail";
 import ErrorPage from "next/error";
 import PdpSkeleton from "components/ProductDetail/PdpSkeleton";
-import LoadingIndicator from "components/LoadingIndicator";
 
 const Product = () => {
   const router = useRouter();

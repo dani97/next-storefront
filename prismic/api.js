@@ -38,7 +38,7 @@ async function fetchAPI(query, {previewData, variables} = {}) {
   return json.data
 }
 
-export async function getHomePage() {
+export async function getHomePage(previewData) {
   const data = await fetchAPI(`
     query home {
       home_page(uid: "home", lang: "en-us") {
@@ -89,9 +89,10 @@ export async function getHomePage() {
           _meta {
               tags
               type
+              uid
           }
       }
     }
-  `)
+  `, { previewData })
   return data?.home_page
 }

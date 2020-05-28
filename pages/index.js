@@ -1,19 +1,27 @@
 import React from "react";
 import Head from "next/head";
-import { getHomePage } from "prismic/api";
+import {getHomePage} from "prismic/api";
 import Banner from "components/Banner";
-import { Carousel } from "react-responsive-carousel";
+import {Carousel} from "react-responsive-carousel";
 import TextBanner from "components/TextBanner";
 import styles from 'pageStyles/index.module.css';
 
-const index = ({ preview, contents }) => {
+const index = ({preview, contents}) => {
   return (
     <>
       <Head>
         <title>{contents.title[0].text}</title>
         <meta name="description" content="Magento 2 PWA reference built with Next JS framework"/>
       </Head>
-      <div>
+      <>
+          {
+            preview && <div role="alert">
+              <div> This is a preview page</div>
+              <a
+                href="/api/exit-preview"
+              > Click here </a> to exit preview mode.
+            </div>
+          }
         <section>
           {contents.body.map((content, index) => {
             if (content.type === "banner_with_caption") {
@@ -64,13 +72,13 @@ const index = ({ preview, contents }) => {
             }
           })}
         </section>
-      </div>
+      </>
     </>
   );
 };
 
-export async function getStaticProps({ params, preview = false, previewData }) {
-  const contents = await getHomePage();
+export async function getStaticProps({params, preview = false, previewData}) {
+  const contents = await getHomePage(previewData);
 
   return {
     props: {

@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./CmsPage.module.css";
 
-const CmsPage = ({ title, contents }) => {
+interface Props {
+    title: string,
+    contents: string
+}
+
+const CmsPage: React.FC<Props> = ({ title, contents }) => {
   return (
     <section className={styles.cmsPage}>
       {title && <h1 className={styles.title}> {title} </h1>}

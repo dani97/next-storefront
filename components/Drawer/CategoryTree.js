@@ -8,6 +8,7 @@ import styles from "./categoryTree.module.css";
 import { ChevronLeft, Home } from "react-feather";
 import TreeSkeleton from "./TreeSkeleton";
 
+
 const Tree = ({ rootId }) => {
   const [category, setCategory] = useState(rootId);
   const { error, loading, data } = useQuery(GET_CATEGORY_LIST, {

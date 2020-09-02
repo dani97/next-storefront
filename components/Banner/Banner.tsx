@@ -2,7 +2,14 @@ import React from "react";
 import styles from "./Banner.module.css";
 import Link from "next/link";
 
-const Banner = ({ imageUrl, bannerText, ctlText, ctlLink }) => (
+interface  BannerProps {
+    imageUrl: string,
+    bannerText: string,
+    ctlText: string,
+    ctlLink: string
+}
+
+const Banner: React.FC<BannerProps> = ({ imageUrl, bannerText, ctlText, ctlLink }) => (
   <>
     <div className={styles.bannerHeader}>
       <h1>{bannerText}</h1>

@@ -1,5 +1,9 @@
-import React from "react";
+import React, {Profiler} from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
+
+const callback = (data) => {
+  console.log(data);
+};
 
 class MyDocument extends Document {
   render() {
@@ -22,12 +26,12 @@ class MyDocument extends Document {
             crossOrigin=""
           />
         </Head>
+        <Profiler id="document" onRender={callback}>
         <body>
           <Main />
           <NextScript />
-          {/* Empty script tag as chrome bug fix, see https://stackoverflow.com/a/42969608/943337 */}
-          <script> </script>
         </body>
+      </Profiler>
       </Html>
     );
   }

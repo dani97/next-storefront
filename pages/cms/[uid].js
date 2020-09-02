@@ -3,6 +3,7 @@ import Head from "next/head";
 import GET_CMS from "queries/getCmsPage.graphql";
 import createApolloClient from "apollo/apolloClient";
 import CmsPage from "components/CmsPage";
+import SiteLayout from "components/SiteLayout";
 
 const cms = ({ page }) => {
   return (
@@ -51,5 +52,7 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+cms.getLayout = page => <SiteLayout>{page}</SiteLayout>;
 
 export default cms;

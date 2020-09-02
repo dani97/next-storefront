@@ -5,6 +5,7 @@ import Banner from "components/Banner";
 import { Carousel } from "react-responsive-carousel";
 import TextBanner from "components/TextBanner";
 import styles from "pageStyles/index.module.css";
+import SiteLayout from "components/SiteLayout";
 
 const index = ({ preview, contents }) => {
   return (
@@ -89,4 +90,5 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   };
 }
 
+index.getLayout = page => <SiteLayout> {page} </SiteLayout>;
 export default index;

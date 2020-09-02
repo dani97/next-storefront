@@ -1,5 +1,4 @@
 import React from "react";
-import { withApollo } from "apollo/apollo";
 import Head from "next/head";
 import { useQuery } from "@apollo/react-hooks";
 import { useRouter } from "next/router";
@@ -7,6 +6,7 @@ import GET_PRODUCT_DETAIL from "queries/getProductDetail.graphql";
 import ProductDetail from "components/ProductDetail";
 import ErrorPage from "next/error";
 import PdpSkeleton from "components/ProductDetail/PdpSkeleton";
+import SiteLayout from "components/SiteLayout";
 
 const Product = () => {
   const router = useRouter();
@@ -34,4 +34,7 @@ const Product = () => {
   );
 };
 
-export default withApollo({ ssr: true })(Product);
+Product.getLayout = page => <SiteLayout>{page}</SiteLayout>
+
+
+export default Product;

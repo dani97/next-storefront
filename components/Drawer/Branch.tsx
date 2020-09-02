@@ -3,9 +3,15 @@ import Link from "next/link";
 import { ChevronRight } from "react-feather";
 import DrawerContext from "./DrawerContext";
 
-const Branch = ({ category, className, handleCategoryChange }) => {
+interface BranchProps {
+    category: any,
+    className: string,
+    handleCategoryChange : (string) => void
+}
+
+const Branch: React.FC<BranchProps> = ({ category, className, handleCategoryChange }) => {
   const { setDrawerOpen } = useContext(DrawerContext);
-  const handleDrawer = () => {
+  const handleDrawer: () => void = () => {
     setDrawerOpen(false);
   };
 

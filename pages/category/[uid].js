@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { withApollo } from "apollo/apollo";
 import Head from "next/head";
 import { useQuery } from "@apollo/react-hooks";
 import { useRouter } from "next/router";
@@ -8,8 +7,9 @@ import ErrorPage from "next/error";
 import ProductGrid from "components/ProductGrid";
 import Pagination from "components/Pagination";
 import GridSkeleton from "components/ProductGrid/GridSkeleton";
+import SiteLayout from "components/SiteLayout";
 
-const Category = () => {
+const Category = ({page}) => {
   const router = useRouter();
   const { error, loading, data } = useQuery(GET_CATEGORY, {
     variables: {
@@ -40,4 +40,6 @@ const Category = () => {
   );
 };
 
-export default withApollo({ ssr: true })(Category);
+Category.getLayout = page => <SiteLayout>{page}</SiteLayout>;
+
+export default Category;

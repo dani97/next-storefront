@@ -22,7 +22,7 @@
         "dotenv": "^8.2.0",
         "graphql": "^15.0.0",
         "graphql-tag": "^2.10.3",
-        "next": "^9.4.0",
+        "next": "^11.1.3",
         "next-offline": "^5.0.0",
         "prismic-javascript": "^2.7.1",
         "prismic-reactjs": "^1.3.1",
